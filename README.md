@@ -27,6 +27,8 @@ Based on this benchmarking framework 4 benchmark applications are provided with 
 
 # Getting started
 
+0. Install packages: cmake, boost & boost-libs, g++
+
 1. Clone the repository int a subdirectory labeld 'hot' by calling
 
 ``` git clone https://github.com/speedskater/hot.git hot```
@@ -36,16 +38,11 @@ Based on this benchmarking framework 4 benchmark applications are provided with 
 ```cd hot```
 
 3. Initialize the submodules with
-```git submodule update --init --recursive ```
+```git submodule update --init ```
 
-4. Running the provided tests suits
+4. Build
 
-To run the unit test suit execute:
-
-```./runTests.sh```
-
-The result of each individual test is written to stdout
-After running the unit tests the coverage report can be found in the subfolder `coverageReport`
+```./releaseBuild.sh```
 
 5. Build all provided benchmarks and tests in release mode execute:
 
@@ -83,8 +80,9 @@ benchmark application as follows.
 
 To compile and use this library the following requirements must be met:
  * x86-64 CPU supporting at least the AVX-2 and BMI-2 instruction sets (Haswell and newer)
- * A C++14 compliant compiler
+ * A C++17 compliant compiler
  * CMake in version 2.8 or newer
+ * boost >= 1.66
 
 # Integrating HOT into your own project
 
@@ -152,5 +150,5 @@ Methods contained only in the single threaded version:
 The provided implementations currently have the following limitations:
 
  * Deletion operations are not supported by the concurrent implementation of HOT
- * The length of the keys are restricted to 255 bytes
+ * The length of the keys are restricted to 2047 bytes
  * The maximum length of the supported tuple identifiers and therefore the keys which can directly be embedded into the indexes are restricted to 63 bits.
