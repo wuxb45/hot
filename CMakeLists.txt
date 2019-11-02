@@ -15,12 +15,12 @@ endif()
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/third-party/bilke-cmake-modules/")
 
 if(USETRAVIS)
-	SET(CMAKE_CXX_FLAGS "-std=c++14 -march=haswell -Wno-deprecated-declarations -Wall -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free -faligned-new") #-fstack-check -fsanitize=undefined ${CMAKE_CXX_FLAGS}
+	SET(CMAKE_CXX_FLAGS "-std=c++17 -march=haswell -Wno-deprecated-declarations -Wall -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free -faligned-new") #-fstack-check -fsanitize=undefined ${CMAKE_CXX_FLAGS}
 elseif(USEAVX2)
-	SET(CMAKE_CXX_FLAGS "-std=c++14 -march=native -mavx -mavx2 -mbmi2 -mlzcnt -Wno-deprecated-declarations -Wall -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free -faligned-new") #-fstack-check -fsanitize=undefined ${CMAKE_CXX_FLAGS}
+	SET(CMAKE_CXX_FLAGS "-std=c++17 -march=native -mavx -mavx2 -mbmi2 -mlzcnt -Wno-deprecated-declarations -Wall -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free -faligned-new") #-fstack-check -fsanitize=undefined ${CMAKE_CXX_FLAGS}
 	SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 else()
-	SET(CMAKE_CXX_FLAGS "-std=c++14 -march=native -Wno-deprecated-declarations -Wall ${CMAKE_CXX_FLAGS} -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free")
+	SET(CMAKE_CXX_FLAGS "-std=c++17 -march=native -Wno-deprecated-declarations -Wall ${CMAKE_CXX_FLAGS} -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free")
 endif()
 
 if(USEAVX512)

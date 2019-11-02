@@ -73,7 +73,7 @@ template<typename KeyType> inline __attribute__((always_inline)) auto toFixSized
  * @return the fixed sized key
  */
 template<> inline auto toFixSizedKey(char const * const & key) {
-	std::array<uint8_t, getMaxKeyLength<char const *>()> fixedSizeKey;
+	std::array<uint8_t, getMaxKeyLength<char const *>()+1> fixedSizeKey;
 	strncpy(reinterpret_cast<char*>(fixedSizeKey.data()), key, getMaxKeyLength<char const *>());
 	return fixedSizeKey;
 }
