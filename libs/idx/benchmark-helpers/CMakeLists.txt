@@ -40,7 +40,6 @@ add_library(benchmark-helpers-lib INTERFACE)
 
 target_sources(benchmark-helpers-lib INTERFACE ${benchmark-helpers-HEADERS})
 
-target_include_directories(benchmark-helpers-lib INTERFACE ${Hana_INCLUDE_DIRS})
 target_include_directories(benchmark-helpers-lib INTERFACE "${PROJECT_SOURCE_DIR}/include")
 
 target_link_libraries(benchmark-helpers-lib INTERFACE utils-lib content-helpers-lib map-helpers-lib pthread TBB::tbb)

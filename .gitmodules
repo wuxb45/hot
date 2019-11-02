@@ -2,9 +2,6 @@
 	path = third-party/tbb
 	url = https://github.com/01org/tbb.git
 	branch = tbb_2019
-[submodule "third-party/boost-hana"]
-	path = third-party/boost-hana
-	url = https://github.com/boostorg/hana.git
 [submodule "third-party/bilke-cmake-modules"]
 	path = third-party/bilke-cmake-modules
 	url = https://github.com/bilke/cmake-modules.git
