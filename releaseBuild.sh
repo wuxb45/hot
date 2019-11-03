@@ -1,4 +1,5 @@
 #!/bin/sh
+git submodule update --init
 CURRENT_DIRECTORY=$(pwd)
 SOURCE_ROOT_DIRECTORY=$(realpath $( dirname ${BASH_SOURCE[0]} ))
 rm -rf $SOURCE_ROOT_DIRECTORY/release-build
